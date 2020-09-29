@@ -2,7 +2,9 @@
 title: "Alcohol vs Seat choice"
 author: "Kristina Larson"
 date: "September 2020"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -25,16 +27,20 @@ basicCN <- ggplot(davisdata,aes(y=alcohol,x=Seat))
 ```
 ## Now add in boxplot
 
+
+
 ```{r}
 basicCN + geom_boxplot()
 ```
-  
+The boxplot shows that it does make a difference where you sit as to how much alcohol will likely be consumed.  
   
 ### get fancy  
 
 ```{r}
 basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='errorbar') + labs(title="Fancy notch boxplot \n with 2 lines")
 ```
+
+The information in the fancy boxplot shows pretty much the same information as in the simple boxplot.
 
 ## Numerical Summarys 
 ```{r}
